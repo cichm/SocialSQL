@@ -31,12 +31,12 @@
 --
 CREATE TABLE users (
   user_id		NUMBER(7) 	NOT NULL CONSTRAINT user_id_us PRIMARY KEY ,
-  Name 			varchar(25) NOT NULL,
-  Email			varchar(30) NOT NULL,
-  Passwd		varchar(30) NOT NULL,
+  Name 			varchar(25) 	NOT NULL,
+  Email			varchar(30) 	NOT NULL,
+  Passwd		varchar(30) 	NOT NULL,
   Gender 		varchar(6) 	NOT NULL,
-  Birthday_Date 	varchar(11) NOT NULL,
-  FB_Join_Date 		varchar(30) NOT NULL
+  Birthday_Date 	varchar(11) 	NOT NULL,
+  FB_Join_Date 		varchar(30) 	NOT NULL
 );
 
 INSERT INTO users (user_id, Name, Email, Passwd, Gender, Birthday_Date, FB_Join_Date) VALUES
