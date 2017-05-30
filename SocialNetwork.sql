@@ -30,11 +30,11 @@
 -- Dumping data for table 'is_admin'
 --
 CREATE TABLE users (
-  user_id			NUMBER(7) 	NOT NULL CONSTRAINT user_id_us PRIMARY KEY ,
-  Name 				varchar(25) NOT NULL,
-  Email				varchar(30) NOT NULL,
-  Passwd			varchar(30) NOT NULL,
-  Gender 			varchar(6) 	NOT NULL,
+  user_id		NUMBER(7) 	NOT NULL CONSTRAINT user_id_us PRIMARY KEY ,
+  Name 			varchar(25) NOT NULL,
+  Email			varchar(30) NOT NULL,
+  Passwd		varchar(30) NOT NULL,
+  Gender 		varchar(6) 	NOT NULL,
   Birthday_Date 	varchar(11) NOT NULL,
   FB_Join_Date 		varchar(30) NOT NULL
 );
@@ -86,12 +86,12 @@ INSERT INTO feedback (feedback_id, user_id, feedback_txt, star, Date_info) VALUE
 (10, 1, 'Good book', '4', '20-12-2015 16:59');
 
 CREATE TABLE user_info (
-  user_id		NUMBER(7)	    NOT NULL CONSTRAINT user_id_us_in REFERENCES users(user_id),
+  user_id		NUMBER(7)	NOT NULL CONSTRAINT user_id_us_in REFERENCES users(user_id),
   job			varchar(100),
-  current_city 	varchar(100) 	NOT NULL,
+  current_city 		varchar(100) 	NOT NULL,
   hometown 		varchar(100) 	NOT NULL,
   website 		varchar(100),
-  Facebook_ID 	VARCHAR(100) 	NOT NULL
+  Facebook_ID 		VARCHAR(100) 	NOT NULL
 );
 
 INSERT INTO user_info (user_id, job, current_city, hometown, website, Facebook_ID) VALUES
@@ -131,7 +131,7 @@ CREATE TABLE user_post_comment (
   comment_id    NUMBER(7)		NOT NULL CONSTRAINT comment_id_us    PRIMARY KEY,
   post_id       NUMBER(7)		NOT NULL CONSTRAINT post_id_us_po_co  REFERENCES user_post(post_id),
   user_id       NUMBER(7)		NOT NULL CONSTRAINT user_id_us_po_co  REFERENCES users(user_id),
-  comment_text  VARCHAR(250)	NOT NULL
+  comment_text  VARCHAR(250)		NOT NULL
 );
 
 INSERT INTO user_post_comment (comment_id, post_id, user_id, comment_text) VALUES
@@ -151,8 +151,8 @@ INSERT INTO user_lock (user_id, user_ban) VALUES
 
 CREATE TABLE user_name_pass (
 	user_id 	NUMBER(7) 	NOT NULL CONSTRAINT user_id_us_na_pa REFERENCES users(user_id),
-	Username 	varchar(20) NOT NULL,
-	Passwd   	varchar(30) NOT NULL
+	Username 	varchar(20) 	NOT NULL,
+	Passwd   	varchar(30) 	NOT NULL
 );
 
 INSERT INTO user_name_pass (user_id, Username, Passwd) VALUES
